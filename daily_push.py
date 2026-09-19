@@ -13,7 +13,7 @@ with open(os.path.join(SCRIPT_DIR, "concepts_detailed.json"), encoding="utf-8") 
 # ─── 选取今日概念（打乱顺序 + 按日期循环） ───
 # 用日期做随机种子，保证同一天看到的永远是同一个概念
 today = datetime.date.today()
-random.seed(today)
+random.seed(today.isoformat())
 shuffled = concepts.copy()
 random.shuffle(shuffled)
 
